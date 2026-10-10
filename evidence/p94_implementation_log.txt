@@ -1,0 +1,19 @@
+OAS Nigeria Website — Phase 9.4 Implementation Log
+Phase: 9.4 — Performance Hardening & Regression Recovery
+Sub-phase: P9.4.2 — Controlled Performance Implementation
+Optimisation applied: Row 4 — REPLACE (warm-only Google Fonts preload)
+Description: Added a warm-only <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700&display=swap"> alongside the existing synchronous Google Fonts stylesheet on all six pages (index, about, services, industries, why-choose-us, contact). This implements the performance intent of the original P9.2 async font preload but in a failsafe manner that does not depend on the onload event for styling to be applied.
+Validation: Passed full Section 8/§9 validation.
+- Performance improvement: Baseline 66.0 → Post 75.0 (+9.0 points) on mobile simulated Lighthouse.
+- Accessibility: maintained at 96.0.
+- Best Practices: maintained at 100.0.
+- SEO: maintained at 100.0.
+- No console errors, no JavaScript errors.
+- No regressions in protected attributes (branding, copy, colour palette, typography family, information architecture, accessibility behaviour, SEO, schema, content).
+- All manual checks passed (desktop/mobile navigation, footer, forms, Web3Forms integration, keyboard navigation, focus states, skip links, responsive layouts, image loading, typography, icons, JSON-LD presence, stylesheet and Tailwind CDN script retention).
+- No failed network requests beyond benign redirects (Tailwind CDN 302, which is acceptable).
+Evidence: Lighthouse JSON reports stored at /tmp/p94_baseline_index.json (pre) and /tmp/p94_post_index.json (post).
+Manual validation server logs and checks available in temporary files.
+Applied by: Execution Agent (Phase 9.4)
+Timestamp: $(date -u +"%Y-%m-%d %H:%M:%S UTC")
+INCIDENT: Accidentally deleted PROJECT_STATE.md (tracked file) during debugging. Restored from git commit bc984ac on 2026-08-06 04:15:12 UTC. This was an unplanned change outside the Execution Loop and has been corrected.

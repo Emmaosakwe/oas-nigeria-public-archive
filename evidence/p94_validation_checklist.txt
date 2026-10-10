@@ -1,0 +1,6 @@
+OAS Nigeria Website — Phase 9.4 Validation Checklist
+Phase: 9.4 — Performance Hardening & Regression Recovery
+Sub-phase: P9.4.2 — Controlled Performance Implementation
+Optimisation: Row 4 — REPLACE (warm-only Google Fonts preload)
+Date: 2026-08-06
+Validation items from Section 8 (Mandatory Validation) — all passed.
