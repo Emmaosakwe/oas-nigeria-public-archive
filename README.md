@@ -27,9 +27,9 @@ The site features:
 
 ## Project Status
 
-As of the latest verification (commit `96b7ab6`), the website's development work is recorded as complete to the extent supported by the evidence, while **production deployment remains pending** awaiting acquisition of a production domain.
+As of the Phase 11 certification commit (`96b7ab6`), the website's development work is recorded as complete to the extent supported by the evidence, while **production deployment remains pending** awaiting acquisition of a production domain. This commit may not be the latest in the original repository.
 
-All functional and visual requirements are implemented and verified. Known limitations include:
+Based on the available evidence, all functional and visual requirements are implemented and verified, subject to the known limitations documented in `KNOWN_LIMITATIONS.md`. Known limitations include:
 - Lighthouse Performance score of 84 (mobile emulation), below the documented target of ≥90 but explicitly accepted as a known limitation.
 - No production domain currently assigned.
 
@@ -47,25 +47,7 @@ Claims about my role are supported only by evidence such as commit messages, mil
 
 ## AI-Assisted Implementation and Workflow Management
 
-The project followed a specification-driven milestone approach:
-- The `WEBSITE_DEVELOPMENT_BLUEPRINT.md` served as the source of truth, organized into phases and numbered prompts (P1.1 through P10.2).
-- Each prompt instructed the coding agent to complete exactly one milestone and then stop.
-- Workflow rules included:
-  - Execute prompts strictly in order; do not start the next until the current is verified complete.
-  - Never modify the work of a previous point unless explicitly allowed.
-  - Never introduce new dependencies, frameworks, or tools unless explicitly instructed.
-  - Treat the OAS Nigeria Company Profile PDF (July 2026 edition) as the canonical source of copy.
-  - Accessibility, performance, and responsiveness are non-negotiable gates per milestone.
-- After each prompt, I waited for the next instruction (whether from a human or automated checkpoint).
-- Git history preserves meaningful checkpoints and recovery work (e.g., commits `2706aa4` recovering from a P9.2 regression).
-- Validation was performed through:
-  - Lighthouse runs (performance, accessibility, best practices, SEO)
-  - Accessibility hardening checklists (P6.2)
-  - SEO implementation (P8.1)
-  - Performance certification (P9.4)
-  - Design audit (P10.1)
-  - Final verification (P11)
-
+The project followed a specification-driven milestone approach using `WEBSITE_DEVELOPMENT_BLUEPRINT.md` as the source of truth (phases and numbered prompts P1.1 through P10.2). Each prompt instructed the coding agent to complete exactly one milestone and then stop. Key workflow rules included executing prompts in strict order (verifying completion before proceeding), treating the OAS Nigeria Company Profile PDF as the canonical copy source, and holding accessibility, performance, and responsiveness as non-negotiable gates per milestone. After each prompt, I waited for the next instruction. Git history preserves meaningful checkpoints and recovery work (e.g., commit `2706aa4` recovering from a P9.2 regression). Validation was performed through Lighthouse runs, accessibility/performance checklists, SEO implementation, performance certification, design audit, and final verification.
 ## How Milestones, Git Checkpoints, Tests, and Reviews Were Handled
 
 - **Milestones:** Each numbered prompt (e.g., P5.1: Header component) corresponds to a specific functional or technical milestone.
@@ -91,7 +73,7 @@ The project followed a specification-driven milestone approach:
 **Measured:**
 - Lighthouse scores (per run, stored as JSON reports in `evidence/lighthouse/`):
   - Performance: varies by run (e.g., 55 in August P10.2 base/final, 84 in September run)
-  - Accessibility: consistently ≥96
+  - Accessibility scores from the included Lighthouse runs are consistently ≥96, but this does not imply that all accessibility requirements pass.
   - Best Practices: 100
   - SEO: 100
 - Specific audits (e.g., colour‑contrast findings in the September run).
@@ -117,7 +99,7 @@ The project followed a specification-driven milestone approach:
 - **TESTING_AND_VALIDATION.md** – Overview of testing methods, validation checklists, and reports.
 - **PERFORMANCE_EVIDENCE.md** – Performance measurements by run, with source references and known limitations.
 - **INCIDENTS_AND_RECOVERY.md** – Documented incidents, regressions, recovery steps, and outstanding limitations.
-- **EVIDENCE_INDEX.md** – Index of all evidence files included in the `evidence/` directory, with source references and SHA‑256 checksums where appropriate.
+  - `evidence/EVIDENCE_INDEX.md` – Index of all evidence files included in the `evidence/` directory, with source references and SHA‑256 checksums where appropriate.
 - **KNOWN_LIMITATIONS.md** – Summary of known limitations and unresolved questions.
 - **MANIFEST.md** – Inventory of files in the public archive with their publication‑risk classification.
 - **evidence/** – Reviewed, approved, safe‑to‑publish evidence only (e.g., Lighthouse reports, non‑sensitive logs).
